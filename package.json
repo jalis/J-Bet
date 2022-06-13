@@ -1,0 +1,32 @@
+{
+	"name": "j-bet",
+	"version": "1.0.0",
+	"description": "An app to bet on subjects using fake currencies, using Discord for Authentication and Discord Guilds as groups to bet inside, with Firestore used as session storage for serverless deployment",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "firebase emulators:exec --ui \"nodemon --ignore client/ index.js\"",
+		"start-no-emu": "nodemon --ignore client/ index.js",
+		"poststart": "npm stop",
+		"stop": "npx kill-port 8888 8080 4000",
+		"format": "npx prettier --write .",
+		"build": "cd client && npm run build "
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@google-cloud/connect-firestore": "^2.0.2",
+		"axios": "^0.27.2",
+		"express": "^4.18.1",
+		"express-session": "^1.17.3",
+		"firebase-admin": "^10.3.0",
+		"serve-static": "^1.15.0"
+	},
+	"devDependencies": {
+		"copyfiles": "^2.4.1",
+		"dotenv": "^16.0.1",
+		"nodemon": "^2.0.16",
+		"prettier": "^2.6.2"
+	}
+}
